@@ -5,32 +5,108 @@
         <link rel="shortcut icon" href="./image/icon.png">
         <!-- 这是页面标签 -->
         <title> test html code</title> 
+        <!-- 这是页面样式 -->
+        <style>
+            body {color:red;}
+            h1 {color:#566156;}
+            p.ex {color:rgb(0,0,255);}
+            .my-button {
+            width: 200px;               /* 设置按钮宽度 */
+            height: 50px;               /* 设置按钮高度 */
+            background-color: #4CAF50;  /* 设置背景颜色 */
+            color: white;               /* 设置文本颜色 */
+            border: none;               /* 去除默认边框 */
+            border-radius: 25px;        /* 设置圆角，形状变成圆角矩形 */
+            font-size: 16px;            /* 设置字体大小 */
+            cursor: pointer;           /* 设置鼠标悬停时为点击手型 */
+            transition: background-color 0.3s; /* 平滑的背景颜色过渡 */
+            }
+            .my-button:hover {
+                background-color: #45a049; /* 鼠标悬停时的背景颜色 */
+            }
+            .my-button:active {
+                background-color: #3e8e41; /* 鼠标点击时的背景颜色 */
+            }
+            </style>
     </head>
     <body>
-        <div id="section1">页面顶部</div>
-        <!-- 这是标题内容 -->
-        <h1> 这是一个标题 </h1><br><!--换行-->
 
-        <!-- 这是段落内容 -->
-        <p>这是一个段落。</p><br>
+        <div id="Top" style="height: 600px;">
+            <h1>Top </h1>
+            <p>HTML的编写框架</p>
+            <!-- 这是附带照片 -->
+            <img src="./image/image1.png" width="500" height="300" />      
+        </div>
 
-        <strong>这是一个重点段落。</strong><br>
-        
-        <em>这是一个强调段落。</em><br>
+        <!-- 页面内容，模拟长页面 -->
+        <div id="section1" style="height: 1000px; background-color: rgb(236, 198, 198);">
+            <!-- 学习文字内容展示 -->
+            <h1> 这是学习文字展示的section1 </h1>
+            <!-- 这是段落内容 -->
+            <p class="ex">这是一个段落。</p>
+            <strong>这是一个重点段落(粗字体)。</strong><br>
+            <em>这是一个强调段落(斜字体)。</em><br>
+        </div>
 
-        <!-- 这是一个超链接 -->
-        <a href = "https://www.bilibili.com" target="_blank"style="color: pink;">
-            跳转bilibili
-        </a> <br>
+        <div id="section2" style="height: 1000px;">
+            <h1>这里是学习button和超链接的section2</h1>
+            <!-- 这是一个超链接 -->
+            <a href = "https://www.bilibili.com" target="_blank"style="color: pink;">
+                跳转bilibili
+            </a><br>
+            <!-- button跳转方式 -->
+            <a href="https://www.baidu.com" target="_blank">
+                <button>baidu.com</button>
+            </a><br>
+            
+        </div>
 
-        <!-- button跳转方式 -->
-        <a href="https://www.baidu.com" target="_blank">
-            <button>baidu.com</button>
-        </a><br>
-        <a href="#section1">跳转到页面顶部</a>
-        
+        <div id="section3" style="height: 1000px;background-color: rgb(236, 198, 198);">
+            <h1>空白section3</h1>
+            <p>Keep scrolling to see the button...</p>
+        </div>
 
-        <!-- 这是附带照片 -->
-        <img src="./image/image1.png" width="1000" height="600" />      
+        <script>
+            function scrollToTop()
+            {
+
+                // 使用 scrollIntoView 方法，平滑滚动到目标元素
+                window.scrollTo({
+                top: 0,  // 平滑滚动
+                left:0   // 滚动到元素顶部
+                });
+            }
+        </script>
+     
+        <button class = "my-button" onclick="scrollToTop()">Go to Top</button><br><br>
+
+        <script>
+            function scrollToSection1() {
+                const section1 = document.getElementById('section1');
+                // 使用 scrollIntoView 方法，平滑滚动到目标元素
+                section1.scrollIntoView({
+                behavior: 'smooth',  // 平滑滚动
+                block: 'start'       // 滚动到元素顶部
+                });
+            }
+        </script>
+
+        <button class = "my-button" onclick="scrollToSection1()">Go to Section1</button><br><br>
+
+        <script>
+            function scrollToSection2()
+            {
+                const section2 = document.getElementById('section2');
+            
+                // 使用 scrollIntoView 方法，平滑滚动到目标元素
+                section2.scrollIntoView({
+                behavior: 'smooth',  // 平滑滚动
+                block: 'start'       // 滚动到元素顶部
+                });
+            }
+        </script>
+
+         <button class = "my-button" onclick="scrollToSection2()">Go to Section2</button><br><br>
+
     </body>
 </html>
